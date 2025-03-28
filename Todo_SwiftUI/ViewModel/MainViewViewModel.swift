@@ -9,15 +9,15 @@ import Foundation
 
 class MainViewViewModel: ObservableObject {
     @Published var currentUserId: String = ""
-    private var  handler: AuthStateDidChangeListenerHandle?
+    private var handler: AuthStateDidChangeListenerHandle?
     
     init() {
-        do {
-            try Auth.auth().signOut()
-            print("User signed out successfully")
-        } catch let signOutError as NSError {
-            print("Error signing out: %@", signOutError)
-        }
+//        do {
+//            try Auth.auth().signOut()
+//            print("User signed out successfully")
+//        } catch let signOutError as NSError {
+//            print("Error signing out: %@", signOutError)
+//        }
         
         let handler = Auth.auth().addStateDidChangeListener { [weak self] _, user in
             DispatchQueue.main.async {

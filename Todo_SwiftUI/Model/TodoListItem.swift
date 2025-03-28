@@ -5,6 +5,7 @@
 //  Created by Kuntulu Ankita on 25/03/25.
 //
 
+import FirebaseFirestore
 import Foundation
 
 struct TodoListItem: Codable, Identifiable {
@@ -12,7 +13,7 @@ struct TodoListItem: Codable, Identifiable {
     var title: String
     var dueDate: TimeInterval
     var createddate: TimeInterval
-    var isdone: Bool
+    var isdone: Bool = false
     
     mutating func setDone(_ state: Bool) {
         isdone = state
